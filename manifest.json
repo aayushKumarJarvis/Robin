@@ -1,0 +1,33 @@
+{
+  
+  "name": "Robin",
+  "description": "Chrome plugin for visually browsing the products",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "permissions": [
+    "webRequest",
+    "background",
+    "tabs",
+    "http://www.amazon.com/*",
+    "https://www.amazon.com/*",
+    "https://api.indix.com/*"
+    ],
+  "content_scripts": [{
+    "matches":["http://www.amazon.com/*", "https://www.amazon.com/*"],
+    "js": ["jquery-1.11.0.min.js"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "persistent": true,
+    "scripts": ["jquery-1.11.0.min.js"]
+  },
+  "icons": { 
+    "128": "robin_new_icon.png",
+    "16": "robin_16.png"
+  },
+  "browser_action": {
+    "default_icon": "robin_16.png",
+    "default_title": "Robin -- Simplifying E-Commerce",
+    "default_popup": "popup.html"
+  }
+}
