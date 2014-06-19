@@ -1,13 +1,4 @@
 
-/*
-
-This is the injected script. 
-I can inject this script because the content script runs in an isolated environment.
-This script will make the required API calls and give the JSON response back.
-
-*/
-
-
 var API = {
   baseUrl: "https://api.indix.com/v1/",
 
@@ -54,24 +45,28 @@ function initializePage(currentActiveTabUrl) {
   // var documentUrl = chrome.extension.getBackgroundPage().currentActiveTabUrl;
   API.searchProductsWithUrl(currentActiveTabUrl, function(products) {
     console.log(products)
-    if(products.length) {
+    if(products) {
       var productId = products[0].id;
       
       API.productDetails(productId, function(similarProducts) {
         console.error(similarProducts);
         //sending request through chrome extension
-   
+        $("#header").append("Similar Products Across Different Online Market Stores");
+        $("#similar-products").append("<tr id='listingProduct'><th style='text-align:left'>Product Link</th style='text-align:left'><th style='text-align:left'>Store Name</th><th>Sale Price</th></tr>");
+        $("#loading").hide();
         $.each(similarProducts.offers, function(index, similarProduct) {
           console.log("Found a similar product!");
           console.log(similarProduct);
-          $("#similar-products").append("<li><a href='" + similarProduct.productUrl + "'>" + similarProduct.title + "</a></li>");
-                    
+          $("#similar-products").append("<tr id= 'listingProduct'><td><a target='_blank' href='" + similarProduct.productUrl + "'>" + similarProduct.title + "</a></td><td id='storeName'>" + similarProduct.storeName + "</td><td id='salePrice'>$" + similarProduct.price.salePrice + "</td> </tr>");
+                                             
+                                             
+                                        
         });
       }, function(error) {
-
       });
     } else {
-      $("#message").text("No similar products found");
+      $("#loading").hide();
+      $("#message").text("No Similar Products Found");
     }
   }, function(error) {
 

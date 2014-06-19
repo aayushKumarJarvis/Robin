@@ -1,28 +1,68 @@
 <!doctype html>
 <html>
   <head>
-    <title>I am freaky Robin !!</title>
+    <title>Freaky Robin !!</title>
     <style>
       body {
-        min-width: 357px;
+        min-width: 557px;
+        min-height: 50px;
         overflow-x: hidden;
       }
 
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
+      #loading {
+        margin-top: 60px;
       }
+
+      #similar-products {
+        font-family: arial;
+      }
+
+      #listingProduct {
+        text-align: left;
+      }
+
+      #listingProduct a {
+        text-decoration: none;
+      }
+
+      #listingProduct td {
+        padding-right: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        font-size: 13px;
+      }
+      #storeName {
+        text-align: center;
+      }
+      #salePrice {
+        text-align: right;
+        padding-left: 7px;   
+      }
+      #header {
+        text-align: center;
+        font-family: arial;
+        padding-bottom: 10px;
+      }
+
+      #message {
+        text-align: center;
+        margin-top: 40px;  
+        font-family: arial;
+      }
+
     </style>
+
     <script src="jquery-1.11.0.min.js"></script>
     <script src="listen.js"></script>
+    
   </head>
   <body>
+    <center><div id="loading">
+      <img src="ajax-loader.gif" alt="Loading..." />
+    </div></center>
     <div id="message" style="display: hidden;"></div>
-    <ul id="similar-products">
-    </ul>
+    <div id="header"></div>
+    <table id="similar-products">
+    </table>
   </body>
 </html>
-
