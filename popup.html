@@ -1,57 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Freaky Robin !!</title>
-    <style>
-      body {
-        min-width: 557px;
-        min-height: 50px;
-        overflow-x: hidden;
-      }
-
-      #loading {
-        margin-top: 60px;
-      }
-
-      #similar-products {
-        font-family: arial;
-      }
-
-      #listingProduct {
-        text-align: left;
-      }
-
-      #listingProduct a {
-        text-decoration: none;
-      }
-
-      #listingProduct td {
-        padding-right: 10px;
-        padding-bottom: 10px;
-        width: 100%;
-        font-size: 13px;
-      }
-      #storeName {
-        text-align: center;
-      }
-      #salePrice {
-        text-align: right;
-        padding-left: 7px;   
-      }
-      #header {
-        text-align: center;
-        font-family: arial;
-        padding-bottom: 10px;
-      }
-
-      #message {
-        text-align: center;
-        margin-top: 40px;  
-        font-family: arial;
-      }
-
-    </style>
-
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-1.11.0.min.js"></script>
     <script src="listen.js"></script>
     
@@ -60,9 +12,17 @@
     <center><div id="loading">
       <img src="ajax-loader.gif" alt="Loading..." />
     </div></center>
-    <div id="message" style="display: hidden;"></div>
-    <div id="header"></div>
+    <div id="header">
+
+    </div>
+    <div id="exportCSV"></div>
+    <div id="dvData">
     <table id="similar-products">
     </table>
+    </div>
+    
+    <div id="issuePopup">
+    </div>
+    <div id="message" style="display: hidden;"></div>
   </body>
 </html>

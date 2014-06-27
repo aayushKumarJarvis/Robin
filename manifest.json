@@ -4,13 +4,14 @@
   "description": "Chrome plugin for visually browsing the products",
   "version": "0.0.1",
   "manifest_version": 2,
+
   "permissions": [
     "webRequest",
     "background",
     "tabs",
-    "http://www.amazon.com/*",
-    "https://www.amazon.com/*",
-    "https://api.indix.com/*"
+    "https://api.indix.com/*",
+    "https://docs.google.com/*",
+    "http://jsonip.com/*"
     ],
   "background": {
     "persistent": true,
@@ -22,7 +23,7 @@
   },
   "browser_action": {
     "default_icon": "robin_16.png",
-    "default_title": "Robin -- Simplifying E-Commerce",
+    "default_title": "Robin - Powered By Indix",
     "default_popup": "popup.html"
   }
 }
