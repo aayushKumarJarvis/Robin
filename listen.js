@@ -31,8 +31,8 @@ var API = {
   },
 
   sendRequest: function(urlToFetch, callback) {
-    var app_id = "62c61a6c";
-    var app_key = "d5817ba5a768a7672c7174a5badabc15";
+    var app_id = "*********";
+    var app_key = "**********************";
     var finalUrlToFetch = urlToFetch + "&app_id=" + app_id + "&app_key=" + app_key;
     //console.log(finalUrlToFetch);
     $.getJSON(finalUrlToFetch, function(data) { 
